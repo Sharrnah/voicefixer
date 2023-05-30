@@ -117,8 +117,8 @@ class VoiceFixer(nn.Module):
     @torch.no_grad()
     def restore_inmem(self, wav_10k, cuda=False, mode=0, sample_rate=44100, your_vocoder_func=None):
         # If the input is a numpy array, convert it to a tensor
-        if isinstance(wav_10k, np.ndarray):
-            wav_10k = torch.from_numpy(wav_10k)
+        #if isinstance(wav_10k, np.ndarray):
+        #    wav_10k = torch.from_numpy(wav_10k)
 
         check_cuda_availability(cuda=cuda)
         self._model = try_tensor_cuda(self._model,cuda=cuda)
